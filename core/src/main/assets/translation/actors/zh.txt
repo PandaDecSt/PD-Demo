@@ -1,0 +1,412 @@
+ WARRIOR
+ 战士
+ Warrior
+ 战士
+ Warriors start with 11 points of Strength.
+ 战士起始拥有11点力量.
+ Warriors start with a unique short sword. This sword can be later "reforged" to upgrade another melee weapon.
+ 战士起始拥有一把独特的短剑.这把短剑稍后能够进行"重铸"用于升级其他近战武器.
+ Warriors are less proficient with missile weapons.
+ 战士不是很擅长投掷武器.
+ Any piece of food restores some health when eaten.
+ 吃下食物能够恢复5点生命值.
+ Potions of Strength are identified from the beginning.
+ 起始时力量药水就已经被鉴定过了.
+ GLADIATOR
+ 角斗士
+ Gladiator
+ 角斗士
+ A successful attack with a melee weapon allows the _Gladiator_ to start a combo, in which every next successful hit inflicts more damage.
+ 使用近战武器成功命中目标能够让_角斗士_进入连击模式,每进行一次成功连击都能造成额外伤害.
+ BERSERKER
+ 狂战士
+ Berserker
+ 狂战士
+ When severely wounded, the _Berserker_ enters a state of wild fury significantly increasing his damage output.
+ 当承受一定程度的伤害后,_狂战士_会进入狂暴状态,大幅提升伤害输出能力.
+
+ MAGE
+ 法师
+ Mage
+ 法师
+ Mages start with a unique Wand of Magic Missile. This wand can be later "disenchanted" to upgrade another wand.
+ 法师起始带有一把独特的魔弹魔杖.这把魔杖稍后能够进行"祛魔"用于升级其他魔杖.
+ Mages recharge their wands faster.
+ 法师的魔杖充能更加迅速.
+ When eaten, any piece of food restores 1 charge for all wands in the inventory.
+ 吃下食物时背包里的魔杖都会恢复一点充能.
+ Mages can use wands as a melee weapon.
+ 法师能够使用魔杖作为近战武器.
+ Scrolls of Identify are identified from the beginning.
+ 起始时鉴定卷轴就已经鉴定过了.
+ WARLOCK
+ 术士
+ Warlock
+ 术士
+ After killing an enemy the _Warlock_ consumes its soul. It heals his wounds and satisfies his hunger.
+ _术士_会将他杀死的敌人的魂魄收走用于治疗与果腹.
+ BATTLEMAGE
+ 战法师
+ Battlemage
+ 战法师
+ When fighting with a wand in his hands, the _Battlemage_ inflicts additional damage depending on the current number of charges. Every successful hit restores 1 charge to this wand.
+ 手持魔杖战斗时,_战法师_能够造成和魔杖充能点数相关的额外伤害.每次命中敌人都能为魔杖恢复一点充能.
+
+ ROGUE
+ 游侠
+ Rogue
+ 游侠
+ Rogues start with a Ring of Shadows+1.
+ 游侠起始带有暗影之戒+1.
+ Rogues identify a type of a ring on equipping it.
+ 游侠装备上之戒就能马上鉴定出它.
+ Rogues are proficient with light armor, dodging better while wearing one.
+ 游侠更适合穿戴轻甲,这能够提升他的闪避率.
+ Rogues are proficient in detecting hidden doors and traps.
+ 游侠擅长侦测隐藏的门和陷阱.
+ Rogues can go without food longer.
+ 游侠不吃东西的情况下能够撑得更久.
+ Scrolls of Magic Mapping are identified from the beginning.
+ 起始时探地卷轴就已经鉴定过了.
+ ASSASSIN
+ 刺客
+ Assassin
+ 刺客
+ When performing a surprise attack, the _Assassin_ inflicts additional damage to his target.
+ _刺客_进行突袭时能够对目标造成额外伤害.
+ FREERUNNER
+ 疾行客
+ Freerunner
+ 疾行客
+ The _Freerunner_ can move almost twice faster, than most of the monsters. When he is running, the Freerunner is much harder to hit. For that he must be unencumbered and not starving.
+ _疾行客_移动速度差不多有大多数怪物的两倍快.他奔跑起来脚步如飞,敌人很难命中.但饿肚子或者负重的时候就无法发挥这种优势了.
+
+ HUNTRESS
+ 女猎
+ Huntress
+ 女猎
+ Huntresses start with 15 points of Health.
+ 女猎起始生命只有15点.
+ Huntresses start with a unique upgradeable boomerang.
+ 女猎起始拥有一支独特的可升级的回旋镖.
+ Huntresses are proficient with missile weapons and get damage bonus for excessive strength when using them.
+ 女猎擅长使用投掷武器,在充满力量时使用投掷武器能够造成额外伤害.
+ Huntresses gain more health from dewdrops.
+ 女猎能够通过露珠恢复更多生命.
+ Huntresses sense neighbouring monsters even if they are hidden behind obstacles.
+ 女猎能够侦测附近的怪物,即使它们藏在墙后.
+
+ SNIPER
+ 狙击手
+ Sniper
+ 狙击手
+ _Snipers_ are able to detect weak points in an enemy's armor, effectively ignoring it when using a missile weapon.
+ 狙击手能够侦测出敌人护甲的弱点,在使用投掷武器时无视护甲高效得进行攻击.
+
+ WARDEN
+ 守望者
+ Warden
+ 守望者
+ Having a strong connection with forces of nature gives _Wardens_ an ability to gather dewdrops and seeds from plants. Also trampling a high grass grants them a temporary armor buff.
+ 与大自然强烈的联系赋予了守望者从草木中收集露珠和种子的能力.同时行走在草丛上时还会获得临时的防护效果.
+ 
+  # GameScene
+
+ Welcome to the level %d of Pixel Dungeon!
+ 欢迎来到像素地牢的第%d层!
+ Welcome back to the level %d of Pixel Dungeon!
+ 欢迎回到像素地牢的第%d层!
+ Be cautious, since the dungeon is even more dangerous at night!
+ 当心,夜晚时的地牢会更加危险!
+ Your steps echo across the dungeon.
+ 地牢里回荡着你的脚步声.
+ You hear the water splashing around you.
+ 你听见附近有水流滴溅的声音.
+ The smell of vegetation is thick in the air.
+ 空气中有淡淡的草木气息.
+ The atmosphere hints that this floor hides many secrets.
+ 这种氛围暗示着这一层地牢藏着许多秘密.
+
+ #ConfusionGas
+ A cloud of confusion gas is swirling here.
+ 一团不明的气体环绕此地.
+
+ #Fire
+ A fire is raging here.
+ 这里烈火肆虐.
+
+ #Foliage
+ Shafts of light pierce the gloom of the underground garden.
+ 光柱穿透幽暗的地下花园.
+
+ #ParalyticGas
+ A cloud of paralytic gas is swirling here.
+ 一团使人麻痹的气体环绕此地.
+
+ #Sacrificial
+ Your sacrifice is worthy...
+ 你的牺牲是值得的...
+
+ Your sacrifice is unworthy...
+ 你的牺牲是不值得的...
+
+ Your sacrifice is worthy and so you are!
+ 看得出来你的牺牲是值得的!
+
+ Sacrificial fire burns here. Every creature touched by this fire is marked as an offering for the spirits of the dungeon.
+ 牺牲的火在这里燃烧.只要被火吻过的生物都会成为地牢幽灵的供品.
+
+ Marked for sacrifice
+ 牺牲的象征
+
+ #ToxicGas
+ A greenish cloud of toxic gas is swirling here.
+ 一团绿色毒气环绕此地.
+
+ You died from a toxic gas..
+ 你死在毒气中...
+
+ #WaterOfAwareness
+ As you take a sip, you feel the knowledge pours into your mind. Now you know everything about your equipped items. Also you sense all items on the level and know all its secrets.
+ 小啜一口便有醍醐灌顶之感,现在你已经通晓了关于你穿戴装备的一切之知识.此外你也感觉到这一层中所有物品的所在,并洞察​​了它们全部的秘密.
+
+ Power of knowledge radiates from the water of this well. Take a sip from it to reveal all secrets of equipped items.
+ 井水中荡漾着知识的魔力.从中小啜一口就能揭晓你所穿戴装备的全部秘密.
+
+ #WaterOfHealth
+ As you take a sip, you feel your wounds heal completely.
+ 小啜一口你感到全身的伤口都完全愈合了.
+
+ Power of health radiates from the water of this well. Take a sip from it to heal your wounds and satisfy hunger.
+ 井水中荡漾着生命的魔力.从中小啜一口就能治愈你所有的伤口并填饱肚子.
+
+ #WaterOfTransmutation
+ Power of change radiates from the water of this well. Throw an item into the well to turn it into something else.
+ 井水中荡漾着变换的魔力.向井水投入物品会将它转变成另一件物品.
+
+ #Web
+ Everything is covered with a thick web here.
+ 这里所有东西都覆盖着一层厚厚的蜘蛛网.
+
+
+ # Win
+
+ You finally hold it in your hands, the Amulet of Yendor. Using its power you can take over the world or bring peace and prosperity to people or whatever. Anyway, your life will change forever and this game will end here. Or you can stay  a mere mortal a little longer.
+ 终于,你将尼德罗护符攥在了手中.有了它的力量,你既可以统治世界,也可以做些将和平和财富带给人民之类的事.无论如何,你的人生将从此焕然一新 ,而游戏也将在这里完结.你也可以选择多逗留一段时间.
+ Let's call it a day
+ 就到这里为止吧
+ I'm not done yet
+ 我还没有准备好
+
+ # Buffs
+
+ Amok
+ 狂乱
+ Barkskin
+ 树皮保护
+ Bleeding
+ 流血
+ You bled to death...
+ 你失血过多而死...
+ Blinded
+ 失明
+ Burning
+ 着火
+ %s burns up!
+ %s烧起来了!
+ You burned to death...
+ 你被烧死了...
+ Charmed
+ 迷惑
+ Combo
+ 连击
+ %d hit combo!
+ %d连击!
+ Crippled
+ 残疾
+ Frozen
+ 冰冻
+ Fury
+ 愤怒
+ Immune to gases
+ 对气体效果免疫
+ Hungry
+ 饥饿
+ Starving
+ 饥肠辘辘
+ You are hungry.
+ 你感到有点饿.
+ You are starving!
+ 你饥肠辘辘!
+ You starved to death...
+ 你饿死了...
+ Invisible
+ 隐形
+ Levitating
+ 悬浮
+ Illuminated
+ 光明
+ Mind vision
+ 灵视
+ Caustic ooze
+ 腐蚀
+ %s killed you...
+ %s杀死了你...
+ Paralysed
+ 麻痹
+ Poisoned
+ 中毒
+ You died from poison...
+ 你被毒死了...
+ Blinded with rage
+ 怒气冲天
+ Rooted
+ 生根
+ Shadowmelded
+ 暗影融合
+ Slowed
+ 迟缓
+ Zeroed in
+ 集中注意
+ Sniper's mark
+ 狙击标记
+ Terror
+ 恐吓
+ Vertigo
+ 晕眩
+ Weakened
+ 虚弱
+
+ %s hit %s
+ %s击中了%s
+ %s killed you...
+ %s杀死了你...
+ %s defeated %s
+ %s击败了%s
+ %s %s your attack
+ %s%s了你的进攻
+ %s %s %s's attack
+ %s%s了%s的进攻
+ The pain snapped %s out of paralysis
+ 解除了麻痹的%s重新感觉到了疼痛
+
+ dodged
+ 闪避
+ poisoned
+ 中毒
+ amok
+ 狂乱
+ slowed
+ 迟缓
+ mind
+ 灵
+ vision
+ 视
+ paralysed
+ 麻痹
+ frightened
+ 恐吓
+ rooted
+ 生根
+ crippled
+ 残疾
+ bleeding
+ 流血
+ dizzy
+ 昏睡
+ invisible
+ 隐形
+
+
+ # HeroActors
+
+ #Hero
+ One does not simply leave Pixel Dungeon.
+ 不能就这么轻易离开像素地牢.
+ level up!
+ 升级!
+ Welcome to level %d! Now you are healthier and more focused. It's easier for you to hit enemies and dodge their attacks.
+ 欢迎升到第%d级!现在你的生命值增加了,专注力也更提高了.你将更容易击中敌人并闪避他们的进攻.
+ You now have %s
+ 你获得了%s
+ There is something else here
+ 这里还有些别的东西
+ This chest is locked and you don't have matching key
+ 箱子上着锁,你没有匹配的钥匙
+ You don't have a matching key
+ 你没有匹配的钥匙
+ You noticed something
+ 你留意到一些东西
+ search
+ 搜寻
+ you
+ 你
+
+ You catch fire!
+ 你着火了!
+ You are paralysed!
+ 你被麻痹了!
+ You are poisoned!
+ 你中毒了!
+ Caustic ooze eats your flesh. Wash away it!
+ 腐蚀泥浆正吞噬着你的血肉,快点洗掉它们!
+ You can't move!
+ 你动弹不得!
+ You feel weakened!
+ 你感到虚弱!
+ You are blinded!
+ 你失明了!
+ You become furious!
+ 你变得愤怒!
+ You are charmed!
+ 你被迷惑了!
+ You are crippled!
+ 你残疾了!
+ You are bleeding!
+ 你在流血!
+ Everything is spinning around you!
+ 眼前的一切都在旋转!
+ 
+  # Result
+
+ # mob
+ Killed by %s on level %d
+ 被第%2$d层的%1$s杀死
+ # boss
+ Killed by the %s on level %d
+ 被第%2$d层的%1$s杀死
+ # wand
+ Killed by your own %s on level %d
+ 在第%2$d层被自己的%1$s杀死
+ # glyph
+ Killed by the %s on level %d
+ 在第%2$d层被%1$s杀死
+ # trap
+ Killed by discharge of %s on level %d
+ 在第%2$d层因触发%1$s而死
+ # burning
+ Burned to death on level %d
+ 在第%d层焚烧至死
+ # starving
+ Starved to death on level %d
+ 在第%d层活活饿死
+ # poison
+ Died from poison on level %d
+ 在第%d层毒发身亡
+ # toxicgas
+ Died from toxic gas on level %d
+ 在第%d层死在毒气中
+ # bleeding
+ Bled to death on level %d
+ 在第%d层因失血过多而致死
+ # ooze
+ Killed by a caustic ooze on level %d
+ 在第%d层死在腐蚀泥浆中
+ # fall
+ Fell to death on level %d
+ 在第%d层摔死
+ # win
+ Obtained the Amulet of Yendor
+ 得到了尼德罗护符
+ Killed by an explosion of a bomb on level %d
+ 在第%d层被炸弹炸死

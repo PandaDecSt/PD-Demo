@@ -1,0 +1,7 @@
+# THIS FILE MUST BE UTF8 WITHOUT BOM
+
+
+ # GameScene
+
+ Play
+ Play

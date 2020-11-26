@@ -1,0 +1,48 @@
+ # GameScene
+
+ Play
+ 开始游戏
+ Rankings
+ 排行榜
+ Badges
+ 勋章
+ About
+ 关于
+ Game Over
+ 游戏结束
+
+ Donate
+ 赞助
+ 
+  # GameScene
+
+ Welcome to the level %d of Pixel Dungeon!
+ 欢迎来到像素地牢的第%d层!
+ Welcome back to the level %d of Pixel Dungeon!
+ 欢迎回到像素地牢的第%d层!
+ Be cautious, since the dungeon is even more dangerous at night!
+ 当心,夜晚时的地牢会更加危险!
+ Your steps echo across the dungeon.
+ 地牢里回荡着你的脚步声.
+ You hear the water splashing around you.
+ 你听见附近有水流滴溅的声音.
+ The smell of vegetation is thick in the air.
+ 空气中有淡淡的草木气息.
+ The atmosphere hints that this floor hides many secrets.
+ 这种氛围暗示着这一层地牢藏着许多秘密.
+ 
+  # levelScene
+
+ Descending...
+ 正在下楼...
+ Ascending...
+ 正在上楼...
+ Loading...
+ 载入中...
+ Resurrecting...
+ 复活中...
+ Returning...
+ 返回中...
+ Falling...
+ 跌落中...
+ 
