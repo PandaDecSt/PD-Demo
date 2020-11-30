@@ -39,6 +39,7 @@ import java.io.OutputStream;
 import com.watabou.utils.PlatformSupport;
 import com.watabou.utils.Callback;
 import com.watabou.utils.AndroidPlatformSupport;
+import com.badlogic.gdx.graphics.FPSLogger;
 
 public abstract class Game<GameActionType> implements ApplicationListener {
 
@@ -74,6 +75,8 @@ public abstract class Game<GameActionType> implements ApplicationListener {
 	public static float elapsed = 0f;
 	
 	public static AndroidPlatformSupport platform = new AndroidPlatformSupport();
+    
+    public static FPSLogger FPSLogger = new FPSLogger();
 
 	public Game( Class<? extends Scene> c, PDPlatformSupport<GameActionType> platformSupport ) {
 		super();
@@ -129,6 +132,7 @@ public abstract class Game<GameActionType> implements ApplicationListener {
 
 	@Override
 	public void render() {
+        this.FPSLogger.log();
 		
 		if (width == 0 || height == 0) {
 			return;

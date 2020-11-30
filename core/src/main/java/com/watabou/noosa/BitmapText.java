@@ -81,7 +81,7 @@ public class BitmapText extends Component {
 	private static final int DELETELINE = 2;
 	private static final int UNDERLINE = 3;
 	private static final int RANDOM = 4;
-	private static int wordStyle = NORMAL;
+	private static int wordStyle;
 
 	public static final int LEFT_ALIGN = 1;
 	public static final int CENTER_ALIGN = 2;
@@ -190,6 +190,7 @@ public class BitmapText extends Component {
 		highlightColorIndex = -1;
 		highlightSymbolDetected = false;
         rainbow = false;
+        wordStyle = NORMAL;
 
 		for (String str : tokens) {
 
@@ -206,13 +207,13 @@ public class BitmapText extends Component {
 					} else if (String.valueOf(str.charAt(0)).equals("k")) {
 						wordStyle = wordStyle | RANDOM;
 					} else if (String.valueOf(str.charAt(0)).equals("l")) {
-						wordStyle = wordStyle | BOLD;
+						wordStyle = BOLD;
 					} else if (String.valueOf(str.charAt(0)).equals("m")) {
 						wordStyle = wordStyle | DELETELINE;
 					} else if (String.valueOf(str.charAt(0)).equals("u")) {
 						wordStyle = UNDERLINE;
 					} else if (String.valueOf(str.charAt(0)).equals("o")) {
-						wordStyle = wordStyle | ITALIC;
+						wordStyle = ITALIC;
 					} else if (String.valueOf(str.charAt(0)).equals("p")) {
 						wordStyle = NORMAL;
 					} else if (String.valueOf(str.charAt(0)).equals("r")) {
@@ -246,29 +247,14 @@ public class BitmapText extends Component {
 				}
 				if (wordStyle == UNDERLINE) {
 					word.setStyle(RenderedText.UNDERLINE);
+				} else if(wordStyle == BOLD) {
+					word.setStyle(RenderedText.BOLD);
+				} else if(wordStyle == ITALIC) {
+                    word.setStyle(RenderedText.ITALIC);
 				} else {
-					word.setStyle(RenderedText.NORMAL);
+                    word.setStyle(RenderedText.NORMAL);
 				}
 				word.scale.set(zoom);
-                ColorBlock Underline;
-                if (word.getStyle() == RenderedText.UNDERLINE) {
-                    if (rainbow) {
-                        Underline = new ColorBlock(1, 2, 0xFFFFFFFF){
-                            private float time = 0;
-                            @Override
-                            public void update() {
-                                super.update();
-                                rm = (float)Math.sin(-(time += Game.elapsed) / 1);
-                                gm = (float)Math.sin((time += Game.elapsed) / 2);
-                                bm = (float)Math.sin((time += Game.elapsed) / 3);
-                            }}; } else {
-                        Underline = new ColorBlock(1, 2, 0xFFFFFFFF);
-                        Underline.color(word.);
-                    }
-                    underlines.add(Underline);
-                    add(Underline);
-                }
-
 				words.add(word);
 				add(word);
 
@@ -341,14 +327,8 @@ public class BitmapText extends Component {
 
 		width = 0;
 		for (RenderedText word : words) {
-            for (ColorBlock Underline : underlines) {
                 if (word == SPACE) {
                     x += 1.5f;
-                    if (word.getStyle() == RenderedText.UNDERLINE) {
-                        Underline.size(x, PixelScene.align(0.49f));
-                        Underline.x = x - 1.5f;
-                        Underline.y = y + 1f;
-                    }
                 } else if (word == NEWLINE) {
                     //newline
                     y += height + 2f;
@@ -356,11 +336,6 @@ public class BitmapText extends Component {
                     nLines++;
                     curLine = new ArrayList<>();
                     lines.add(curLine);
-                    if (word.getStyle() == RenderedText.UNDERLINE) {
-                        Underline.size(x, PixelScene.align(0.49f));
-                        Underline.x = x - 1.5f;
-                        Underline.y = y + 1f;
-                    }
                 } else {
                     if (word.height() > height) height = word.height();
 
@@ -370,11 +345,6 @@ public class BitmapText extends Component {
                         nLines++;
                         curLine = new ArrayList<>();
                         lines.add(curLine);
-                        if (word.getStyle() == RenderedText.UNDERLINE) {
-                            Underline.size(x, PixelScene.align(0.49f));
-                            Underline.x = x - 1.5f;
-                            Underline.y = y + 1f;
-                        }
                     }
 
                     word.x = x;
@@ -411,7 +381,7 @@ public class BitmapText extends Component {
                 }
             }
         }
-    }
+ //   }
     public float baseLine() {
         return height();
     }
