@@ -76,8 +76,6 @@ public abstract class Game<GameActionType> implements ApplicationListener {
 	
 	public static AndroidPlatformSupport platform = new AndroidPlatformSupport();
     
-    public static FPSLogger FPSLogger = new FPSLogger();
-
 	public Game( Class<? extends Scene> c, PDPlatformSupport<GameActionType> platformSupport ) {
 		super();
 		sceneClass = c;
@@ -132,7 +130,7 @@ public abstract class Game<GameActionType> implements ApplicationListener {
 
 	@Override
 	public void render() {
-        this.FPSLogger.log();
+        Gdx.app.log("FPS", "" +Gdx.graphics.getFramesPerSecond());
 		
 		if (width == 0 || height == 0) {
 			return;
