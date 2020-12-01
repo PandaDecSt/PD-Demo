@@ -81,8 +81,8 @@ public abstract class Level implements Bundlable {
 		GRASS
 	};
 	
-	public static final int WIDTH = 32;
-	public static final int HEIGHT = 32;
+	public static final int WIDTH = 128;
+	public static final int HEIGHT = 128;
 	public static final int LENGTH = WIDTH * HEIGHT;
 	
 	public static final int[] NEIGHBOURS4 = {-WIDTH, +1, +WIDTH, -1}; 
