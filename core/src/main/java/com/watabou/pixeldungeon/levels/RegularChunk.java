@@ -22,14 +22,25 @@ import com.watabou.noosa.Group;
 import com.watabou.noosa.Scene;
 import com.watabou.noosa.particles.PixelParticle;
 import com.watabou.pixeldungeon.Assets;
+import com.watabou.pixeldungeon.Bones;
 import com.watabou.pixeldungeon.Dungeon;
 import com.watabou.pixeldungeon.DungeonTilemap;
-import com.watabou.pixeldungeon.actors.mobs.npcs.Blacksmith;
-import com.watabou.pixeldungeon.levels.Room.Type;
+import com.watabou.pixeldungeon.actors.Char;
+import com.watabou.pixeldungeon.actors.mobs.Mimic;
+import com.watabou.pixeldungeon.actors.mobs.Mob;
+import com.watabou.pixeldungeon.items.Generator;
+import com.watabou.pixeldungeon.items.Heap;
+import com.watabou.pixeldungeon.items.Item;
+import com.watabou.pixeldungeon.items.keys.GoldenKey;
+import com.watabou.pixeldungeon.items.quest.DriedRose;
 import com.watabou.pixeldungeon.levels.painters.Painter;
 import com.watabou.utils.PointF;
 import com.watabou.utils.Random;
-import com.watabou.utils.Rect;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import com.watabou.pixeldungeon.actors.mobs.Bestiary;
+import com.watabou.pixeldungeon.actors.Actor;
 
 public class RegularChunk extends Level {
 
@@ -41,11 +52,19 @@ public class RegularChunk extends Level {
 
     @Override
     protected void createMobs() {
+        int nMobs = nMobs();
+        for (int i=0; i < nMobs; i++) {
+            Mob mob = Bestiary.mob( Dungeon.depth );
+            do {
+                mob.pos = randomRespawnCell();
+            } while (mob.pos == -1);
+            mobs.add( mob );
+            Actor.occupyCell( mob );
+		}
     }
 
     @Override
-    protected void createItems() {
-    }
+    protected void createItems() {}
     
 
     {
