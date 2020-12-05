@@ -36,6 +36,7 @@ import com.watabou.pixeldungeon.items.weapon.missiles.Boomerang;
 import com.watabou.pixeldungeon.ui.QuickSlot;
 import com.watabou.utils.Bundle;
 import com.watabou.pixeldungeon.items.bags.PotionHolder;
+import com.watabou.pixeldungeon.items.food.CustomFood;
 
 public enum HeroClass {
 
@@ -114,6 +115,7 @@ public enum HeroClass {
 	private static void initCommon( Hero hero ) {
 		(hero.belongings.armor = new ClothArmor()).identify();
 		new Food().identify().collect();
+        new CustomFood().identify().collect();
 		new Keyring().collect();
 //        new PotionHolder().collect();
 	}

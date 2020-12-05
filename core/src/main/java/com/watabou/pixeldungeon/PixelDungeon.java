@@ -30,6 +30,7 @@ import com.watabou.pixeldungeon.scenes.TitleScene;
 import com.watabou.utils.PDPlatformSupport;
 import net.whitegem.pixeldungeon.LanguageUtil;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.watabou.utils.JsonHelper;
 
 public class PixelDungeon extends Game
 {
@@ -297,13 +298,20 @@ public class PixelDungeon extends Game
 	 */
 
     @Override
-    public void create()
+    public void show()
     {
-        super.create();
+        super.show();
 
 //        checkPurchase();
+//       JsonHelper j = new JsonHelper(Gdx.files.internal("json/items/book/abstract.json"));
+//        Gdx.app.log("modloader","数值"+j.size());
+//        Gdx.app.log("modloader",j.index2value(j.size()).toString());
+        JsonHelper modloader = new JsonHelper(Gdx.files.internal("json/food.json"));
+        Gdx.app.log("modloader",Gdx.files.internal("json/food.json").file().getAbsolutePath());
 
-
+        
+        
+        
         // set language
         LanguageUtil.setLanguage();
 

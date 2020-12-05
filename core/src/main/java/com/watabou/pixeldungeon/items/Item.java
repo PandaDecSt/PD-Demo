@@ -73,9 +73,15 @@ public class Item implements Bundlable {
 	public static final String AC_THROW		= "THROW";
 	
 	public String defaultAction;
+    
+    public String id = "smth";
+    
+    public static final String defaultAtlas = Assets.ITEMS;
+    public String Atlas = defaultAtlas;
 	
 	protected String name = "smth";
 	protected int image = 0;
+    public int image_size = 16;
 	
 
 	public boolean stackable = false;

@@ -172,7 +172,7 @@ public class WndCatalogus extends WndTabbed {
 		
 		@Override
 		protected void createChildren() {
-			sprite = new ItemSprite();
+			sprite = new ItemSprite(new Item());
 			add( sprite );
 			
 			label = PixelScene.createText( 8 );

@@ -1,21 +1,20 @@
 package com.ansdoship.virtualpd;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeType;
 import com.badlogic.gdx.utils.GdxNativesLoader;
-import com.watabou.pixeldungeon.PixelDungeon;
+import com.watabou.pixeldungeon.Launcher;
 import com.watabou.utils.PDPlatformSupport;
-import android.os.Build;
-import android.Manifest;
-import android.content.pm.PackageManager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AndroidLauncher extends AndroidApplication
-{
+public class AndroidLauncher extends AndroidApplication {
     AndroidApplicationConfiguration config;
 
 	@Override
@@ -31,10 +30,9 @@ public class AndroidLauncher extends AndroidApplication
 	}
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
 		requestPermissions();
-		
+
         super.onCreate(savedInstanceState);
 
         Log.d("DEBUG", "AndroidLauncher::onCreate");
@@ -43,14 +41,14 @@ public class AndroidLauncher extends AndroidApplication
 
         config = new AndroidApplicationConfiguration();
         config.useWakelock = true;
+        config.useRotationVectorSensor = true;
         launch(config);
     }
-    
-    private void launch(AndroidApplicationConfiguration config)
-    {
-        initialize(new PixelDungeon(new PDPlatformSupport<>("build 011", "virtualpixeldungeon/saves/", new AndroidInputProcessor(this))), config);
+
+    private void launch(AndroidApplicationConfiguration config) {
+        initialize(new Launcher(new PDPlatformSupport<>("build 011", "virtualpixeldungeon/saves/", new AndroidInputProcessor(this))), config);
     }
-	
+
 	private void requestPermissions() {
         if (Build.VERSION.SDK_INT > 21) {
             List<String> permissionsList = new ArrayList<>();
@@ -68,9 +66,9 @@ public class AndroidLauncher extends AndroidApplication
             if (!permissionsList.isEmpty()) {
                 requestPermissions(permissionsList.toArray(new String[permissionsList.size()]), 1);
             }
-			
+
         }
     }
-	
-    
+
+
 }

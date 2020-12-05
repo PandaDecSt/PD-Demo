@@ -40,8 +40,9 @@ import com.watabou.utils.PlatformSupport;
 import com.watabou.utils.Callback;
 import com.watabou.utils.AndroidPlatformSupport;
 import com.badlogic.gdx.graphics.FPSLogger;
+import com.badlogic.gdx.ScreenAdapter;
 
-public abstract class Game<GameActionType> implements ApplicationListener {
+public abstract class Game<GameActionType> extends ScreenAdapter {
 
 	public static Game instance;
 	
@@ -89,7 +90,7 @@ public abstract class Game<GameActionType> implements ApplicationListener {
     }
 
 	@Override
-	public void create() {
+	public void show() {
 		instance = this;
 		
 		density = Gdx.graphics.getDensity();
@@ -129,7 +130,7 @@ public abstract class Game<GameActionType> implements ApplicationListener {
 	}
 
 	@Override
-	public void render() {
+	public void render(float delta) {
         Gdx.app.log("FPS", "" +Gdx.graphics.getFramesPerSecond());
 		
 		if (width == 0 || height == 0) {

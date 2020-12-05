@@ -44,6 +44,7 @@ public class ItemSlot extends Button {
 	protected BitmapText topLeft;
 	protected BitmapText topRight;
 	protected BitmapText bottomRight;
+    protected Item item;
 	
 	private static final String TXT_STRENGTH	= ":%d";
 	private static final String TXT_TYPICAL_STR	= "%d?";
@@ -79,7 +80,7 @@ public class ItemSlot extends Button {
 		
 		super.createChildren();
 		
-		icon = new ItemSprite();
+		icon = new ItemSprite(new Item());
 		add( icon );
 		
 //		topLeft = new BitmapText( PixelScene.font1x );
@@ -168,6 +169,7 @@ public class ItemSlot extends Button {
 			} else {
 				bottomRight.text( null );
 			}
+            this.item = item;
 			
 			layout();
 		}

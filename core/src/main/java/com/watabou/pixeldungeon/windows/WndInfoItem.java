@@ -64,7 +64,7 @@ public class WndInfoItem extends Window {
 					color = item.isBroken() ? ItemSlot.WARNING : ItemSlot.UPGRADED;				
 				}
 			}
-			fillFields( item.image(), item.glowing(), color, item.toString(), item.info() );
+			fillFields( item, color, item.toString(), item.info() );
 			
 		} else {
 			
@@ -88,7 +88,7 @@ public class WndInfoItem extends Window {
 				info = TXT_NEED_KEY;
 			}
 			
-			fillFields( heap.image(), heap.glowing(), TITLE_COLOR, title, info );
+			fillFields( heap, TITLE_COLOR, title, info );
 			
 		}
 	}
@@ -106,22 +106,54 @@ public class WndInfoItem extends Window {
 			}
 		}
 		
-		fillFields( item.image(), item.glowing(), color, item.toString(), item.info() );
+		fillFields( item, color, item.toString(), item.info() );
+	}
+    
+    private void fillFields( Item item, int titleColor, String title, String info ) {
+
+        IconTitle titlebar = new IconTitle();
+        titlebar.icon( new ItemSprite( item ) );
+        titlebar.label( Utils.capitalize( title ), titleColor );
+        titlebar.setRect( 0, 0, WIDTH, 0 );
+        add( titlebar );
+
+        BitmapTextMultiline txtInfo = PixelScene.createMultiline( info, 6 );
+        txtInfo.maxWidth(WIDTH);
+        txtInfo.setPos(titlebar.left(), titlebar.bottom() + GAP);
+        add( txtInfo );
+
+        resize( WIDTH, (int)(txtInfo.bottom() + 2) );
+	}
+    
+    private void fillFields( Heap heap, int titleColor, String title, String info ) {
+
+        IconTitle titlebar = new IconTitle();
+        titlebar.icon( new ItemSprite( heap ) );
+        titlebar.label( Utils.capitalize( title ), titleColor );
+        titlebar.setRect( 0, 0, WIDTH, 0 );
+        add( titlebar );
+
+        BitmapTextMultiline txtInfo = PixelScene.createMultiline( info, 6 );
+        txtInfo.maxWidth(WIDTH);
+        txtInfo.setPos(titlebar.left(), titlebar.bottom() + GAP);
+        add( txtInfo );
+
+        resize( WIDTH, (int)(txtInfo.bottom() + 2) );
 	}
 	
-	private void fillFields( int image, ItemSprite.Glowing glowing, int titleColor, String title, String info ) {
-		
-		IconTitle titlebar = new IconTitle();
-		titlebar.icon( new ItemSprite( image, glowing ) );
-		titlebar.label( Utils.capitalize( title ), titleColor );
-		titlebar.setRect( 0, 0, WIDTH, 0 );
-		add( titlebar );
-		
-		BitmapTextMultiline txtInfo = PixelScene.createMultiline( info, 6 );
-		txtInfo.maxWidth(WIDTH);
-		txtInfo.setPos(titlebar.left(), titlebar.bottom() + GAP);
-		add( txtInfo );
-		
-		resize( WIDTH, (int)(txtInfo.bottom() + 2) );
-	}
+//	private void fillFields( int image, ItemSprite.Glowing glowing, int titleColor, String title, String info ) {
+//		
+//		IconTitle titlebar = new IconTitle();
+//		titlebar.icon( new ItemSprite( image, glowing ) );
+//		titlebar.label( Utils.capitalize( title ), titleColor );
+//		titlebar.setRect( 0, 0, WIDTH, 0 );
+//		add( titlebar );
+//		
+//		BitmapTextMultiline txtInfo = PixelScene.createMultiline( info, 6 );
+//		txtInfo.maxWidth(WIDTH);
+//		txtInfo.setPos(titlebar.left(), titlebar.bottom() + GAP);
+//		add( txtInfo );
+//		
+//		resize( WIDTH, (int)(txtInfo.bottom() + 2) );
+//	}
 }

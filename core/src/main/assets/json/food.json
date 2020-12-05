@@ -1,0 +1,14 @@
+[
+  {
+    "id": "fsf",
+    "type": "FOOD",
+    "name": "可食用护身符",
+    "info": "护身符也轮到了被吃的地步",
+    "message": "吃了之后感到浑身充满了力量!",
+    "price": 5000,
+    "energy": 3000f,
+    "image": 0,
+    "image_size": 32,
+    "atlas": "amulet.png"
+  }
+]

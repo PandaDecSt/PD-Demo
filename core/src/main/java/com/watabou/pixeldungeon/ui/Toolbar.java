@@ -338,7 +338,7 @@ public class Toolbar extends Component {
 		private float left;
 		
 		public PickedUpItem() {
-			super();
+			super(new Item());
 			
 			originToCenter();
 			
@@ -354,8 +354,8 @@ public class Toolbar extends Component {
 			visible = 
 				true;
 			
-			this.dstX = dstX - ItemSprite.SIZE / 2;
-			this.dstY = dstY - ItemSprite.SIZE / 2;
+			this.dstX = dstX - item.image_size / 2;
+			this.dstY = dstY - item.image_size / 2;
 			left = DURATION;
 			
 			x = this.dstX - DISTANCE;

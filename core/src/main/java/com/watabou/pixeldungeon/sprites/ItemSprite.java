@@ -45,11 +45,11 @@ import com.watabou.noosa.NoosaScript;
 
 public class ItemSprite extends MovieClip {
 
-	public static final int SIZE	= 16;
+	public static int SIZE	= 16;
 
 	private static final float DROP_INTERVAL = 0.4f;
 
-	protected static TextureFilm film;
+	protected TextureFilm film;
 
 	public Heap heap;
 
@@ -65,20 +65,33 @@ public class ItemSprite extends MovieClip {
 	protected float shadowOffset    = 0.1f;
 
 	public ItemSprite() {
-		this(ItemSpriteSheet.SMTH, null);
+		this(Item.defaultAtlas, ItemSpriteSheet.SMTH, SIZE, null);
 	}
 
 	public ItemSprite(Item item) {
-		this(item.image(), item.glowing());
+		this(item.Atlas, item.image(), item.image_size, item.glowing());
 	}
+    
+    public ItemSprite(int image, Glowing glowing) {
+        this(Item.defaultAtlas, image, 16, glowing);
+	}
+    
+    public ItemSprite(Heap heap) {
+        this(Item.defaultAtlas, heap.image(), 16, heap.glowing());
+	}
+    
+//    public ItemSprite(int image, Glowing glowing) {
+//        this(Item.defaultAtlas, image, SIZE, glowing);
+//    }
+    
+    public ItemSprite(Item item, Glowing glowing) {
+        this(item.Atlas, item.image(), item.image_size, glowing);
+    }
 
-	public ItemSprite(int image, Glowing glowing) {
-		super(Assets.ITEMS);
-
-		if (film == null) {
-			film = new TextureFilm(texture, SIZE, SIZE);
-		}
-
+	public ItemSprite(Object Atlas, int image, int size, Glowing glowing) {
+		super(Atlas);
+        SIZE = size;
+		film = new TextureFilm(texture, SIZE, SIZE);
 		view(image, glowing);
 	}
 
@@ -266,20 +279,20 @@ public class ItemSprite extends MovieClip {
 		}
 	}
 
-	public static int pick(int index, int x, int y) {
-		GdxTexture bmp = TextureCache.get(Assets.ITEMS).bitmap;
-		int rows = bmp.getWidth() / SIZE;
-		int row = index / rows;
-		int col = index % rows;
-		// FIXME: I'm assuming this is super slow?
-		final TextureData td = bmp.getTextureData();
-		if (!td.isPrepared()) {
-			td.prepare();
-		}
-		final Pixmap pixmap = td.consumePixmap();
-		int pixel = pixmap.getPixel(col * SIZE + x, row * SIZE + y);
-		pixmap.dispose();
-		return pixel;
+    public static int pick(Item item, int x, int y) {
+        GdxTexture bmp = TextureCache.get(item.Atlas).bitmap;
+        int rows = bmp.getWidth() / item.image_size;
+        int row = item.image() / rows;
+        int col = item.image() % rows;
+        // FIXME: I'm assuming this is super slow?
+        final TextureData td = bmp.getTextureData();
+        if (!td.isPrepared()) {
+            td.prepare();
+        }
+        final Pixmap pixmap = td.consumePixmap();
+        int pixel = pixmap.getPixel(col * item.image_size + x, row * item.image_size + y);
+        pixmap.dispose();
+        return pixel;
 	}
 
 	public static class Glowing {

@@ -107,7 +107,7 @@ public class WndChooseWay extends Window {
 	
 	private float createCommonStuff( TomeOfMastery tome, String text ) {
 		IconTitle titlebar = new IconTitle();
-		titlebar.icon( new ItemSprite( tome.image(), null ) );
+		titlebar.icon( new ItemSprite( tome, null ) );
 		titlebar.label( tome.name() );
 		titlebar.setRect( 0, 0, WIDTH, 0 );
 		add( titlebar );

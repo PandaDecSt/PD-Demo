@@ -18,6 +18,7 @@
 package com.watabou.pixeldungeon.sprites;
 
 import com.watabou.noosa.Game;
+import com.watabou.pixeldungeon.items.Item;
 
 public class DiscardedItemSprite extends ItemSprite {
 	
